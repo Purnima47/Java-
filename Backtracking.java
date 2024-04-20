@@ -108,6 +108,7 @@ public class Backtracking {
     }
 
     // TC: O(2^(n*m))
+    // Exponential time complexity
     public static int GridWaysToReachTarget(int i, int j, int n, int m) {
         if (i == n - 1 && j == m - 1) {
             return 1;
@@ -120,6 +121,7 @@ public class Backtracking {
     }
 
     // TC:O(n+m)
+    // Permutation for characters(RD...) i.e R = Right, D = Down
     public static void GridWaysToReachTarget2() {
 
     }
