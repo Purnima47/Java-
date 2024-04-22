@@ -42,6 +42,7 @@ public class ValidParanthesis {
                     return true;  //duplicate exists krta hai.
                 }else{
                     s.pop();  // opening pair 
+                    // we can skip this else case if we do s.pop() !='(' in while loop in place of s.peek()..
                 }
             }else{
                 // opening ki condition
