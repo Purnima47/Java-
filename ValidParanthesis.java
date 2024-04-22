@@ -39,11 +39,12 @@ public class ValidParanthesis {
                     count++;
                 }
                 if (count<1) {
-                    return true;
+                    return true;  //duplicate exists krta hai.
                 }else{
                     s.pop();  // opening pair 
                 }
             }else{
+                // opening ki condition
                 s.push(ch);
             }
         }
@@ -53,5 +54,10 @@ public class ValidParanthesis {
     public static void main(String[] args) {
         String str = "({[()]}()";
         System.out.println(isValid(str));
+
+        String str1 = "((a+b))"; //true
+        String str2 = "(a-b)";   //false
+        System.out.println(isDuplicate(str1));
+        System.out.println(isDuplicate(str2));
     }
 }
