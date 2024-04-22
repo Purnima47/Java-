@@ -7,6 +7,8 @@ public class MaxAreaInHisto {
         int nsl[] = new int[height.length];
 
         // NEXT SMALLER RIGHT
+        // in sb mein indices of next smaller right store hoga
+        // aur kisi ke liye nsr agr nhi hai tb array ki total length store hogi !!
         Stack<Integer> s = new Stack<>();
         for (int i = height.length - 1; i >= 0; i--) {
             while (!s.isEmpty() && height[s.peek()] >= height[i]) {
@@ -21,6 +23,8 @@ public class MaxAreaInHisto {
         }
 
         // NEXT SMALLER LEFT
+        // in sb mein indices of next smaller left store hoga
+        // aur kisi ke liye nsl agr nhi hai tb -1 store hoga !! 
         s = new Stack<>();
         for (int i = 0; i < height.length; i++) {
             while (!s.isEmpty() && height[s.peek()] >= height[i]) {
