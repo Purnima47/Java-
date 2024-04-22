@@ -117,6 +117,28 @@ public class LinkedList {
         return -1;
     }
 
+    public int helper(Node head, int key){  // O(n)
+        if(head == null){
+            return -1;
+        }
+
+        if(head.data == key){
+            return 0;
+        }
+        int idx = helper(head.next, key);
+        if(idx == -1){
+            return -1;
+        }
+
+        return idx+1;  // Because from where we will get key equal to its data it will return 0
+        // So to get proper index we need to add +1 at all levels.
+    }
+
+    public int searchRecursive(int key) {
+        return helper(head, key);
+    }
+
+
     public void reverse() { // O(n)
         Node prev = null;
         Node curr = tail = head;
