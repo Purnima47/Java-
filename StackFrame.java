@@ -43,6 +43,38 @@ public class StackFrame {
         }
     }
 
+    // STOCK SPAN PROBLEM
+    // span : max no. of consective days for which price <= today's price.
+    // O(n)
+    public static void stockStack(int stock[] , int span[]){
+        Stack<Integer> s = new Stack<>();
+        span[0] = 1;
+        s.push(0);
+
+        for(int i = 1; i<stock.length; i++){
+            int curPrice = stock[i];
+            while(!s.isEmpty() && curPrice > stock[s.peek()]){
+                s.pop();
+            }
+            if(s.isEmpty()){
+                span[i] = i+1;
+            }
+            else{
+              int prevHigh = s.peek();
+              span[i] = i-prevHigh;
+            }
+
+            s.push(i);
+        }
+    }
+
+     public static void printSpan(int span[]){
+         System.out.println("Span data is: ");
+         for (int i = 0; i < span.length; i++) {
+             System.out.print(span[i] +" ");
+        }
+     }
+
     public static void main(String[] args) {
         // Stack<Integer> s = new Stack<>();
         // s.push(1);
@@ -67,6 +99,12 @@ public class StackFrame {
         s.push(3);
         reverseStack(s);
         printStack(s);
+
+        int stock[] = {100, 80 ,60,70,80,85,100};
+        int span[] = new int[stock.length];
+        stockStack(stock , span);
+        printSpan(span);
+        
 
     }
 }
