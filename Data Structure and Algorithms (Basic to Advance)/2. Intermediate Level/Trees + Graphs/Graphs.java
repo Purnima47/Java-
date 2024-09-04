@@ -17,6 +17,7 @@ public class Graphs {
 
     public static void createGraphAdjacencyList() {
         int V = 5;
+        // array of array list.
         ArrayList<Edge>[] graph = new ArrayList[V];
 
         /*
@@ -62,6 +63,19 @@ public class Graphs {
             System.out.print(e.dest + " ");
         }
     }
+
+    /* Applications of Graphs -->
+     * 1. Maps (Shortest Path)
+     * 2. Social Network
+     * 3. Delivery Network (Shorted Cyclic Route)
+     * 4. Physics and Chemistry
+     * 5. Routing Algorithms
+     * 6. Machine Learning
+     * 7. Dependency Graph
+     * 8. Computer Vision
+     * 9. Graph Databases
+     * 10. Research
+    */
 
     static void createGraph(ArrayList<Edge> graph[]) { // O(V+E)
         /*
@@ -120,6 +134,10 @@ public class Graphs {
         graph[4].add(new Edge(4, 3, 1));
     }
 
+    // GRAPH TRAVERSALS --> BFS(breadth first search), DFS(depth first search)
+
+
+    // Go to immediate neighbors first.
     public static void bfs(ArrayList<Edge> graph[]) {
         boolean visited[] = new boolean[graph.length];
         for (int i = 0; i < visited.length; i++) {
