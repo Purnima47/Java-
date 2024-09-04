@@ -64,7 +64,8 @@ public class Graphs {
         }
     }
 
-    /* Applications of Graphs -->
+    /*
+     * Applications of Graphs -->
      * 1. Maps (Shortest Path)
      * 2. Social Network
      * 3. Delivery Network (Shorted Cyclic Route)
@@ -75,7 +76,7 @@ public class Graphs {
      * 8. Computer Vision
      * 9. Graph Databases
      * 10. Research
-    */
+     */
 
     static void createGraph(ArrayList<Edge> graph[]) { // O(V+E)
         /*
@@ -136,8 +137,6 @@ public class Graphs {
 
     // GRAPH TRAVERSALS --> BFS(breadth first search), DFS(depth first search)
 
-
-    // Go to immediate neighbors first.
     public static void bfs(ArrayList<Edge> graph[]) {
         boolean visited[] = new boolean[graph.length];
         for (int i = 0; i < visited.length; i++) {
@@ -147,6 +146,8 @@ public class Graphs {
         }
     }
 
+    // Go to immediate neighbors first.
+    // O(V + E)
     public static void bfsUtil(ArrayList<Edge> graph[], boolean visited[]) { // O(n)
         Queue<Integer> q = new LinkedList<>();
 
@@ -165,6 +166,7 @@ public class Graphs {
         }
     }
 
+    // Keep going to the 1st neighbor
     public static void dfs(ArrayList<Edge> graph[]) {
         boolean visited[] = new boolean[graph.length];
         for (int i = 0; i < visited.length; i++) {
